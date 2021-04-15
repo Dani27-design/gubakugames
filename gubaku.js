@@ -12,7 +12,7 @@ const loadPage = async () => {
             for (let i = 3; i > 0; i--) {
 
                 let {value: player} = await Swal.fire({
-                    title: 'Submit Weapon<br><br>gunting<br>batu<br>kertas',
+                    title: 'Choose Weapon<br><br>gunting<br>batu<br>kertas',
                     input: 'text',
                     inputAttributes: {
                       autocapitalize: 'off'
