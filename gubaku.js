@@ -1,6 +1,6 @@
 const loadPage = async () => {
     let again = true;
-    // const start = alert('Welcome To GUBAKU GAMES<br>By Daniansyah<br><br>You have 3 Life');
+
     const start = await Swal.fire({
         title: 'Welcome To Gubaku Games<br>By Daniansyah Chusyaidin',
         text: 'You have 3 Life',
@@ -10,15 +10,18 @@ const loadPage = async () => {
     if (start) {
         while (again) {
             for (let i = 3; i > 0; i--) {
-                // let player = prompt('Choose Character : gunting, batu, kertas');
+
                 let {value: player} = await Swal.fire({
-                    title: 'Submit your Weapon (gunting,batu,kertas)',
+                    title: 'Submit your Weapon<br><br>gunting<br>batu<br>kertas',
                     input: 'text',
                     inputAttributes: {
                       autocapitalize: 'off'
                     },
                     showCancelButton: true,
-                    confirmButtonText: 'Ok'});
+                    confirmButtonText: 'Ok',
+                    customClass: {
+                        title:'styleBaru'
+                    }});
         
                 let nyawa = i - 1;
                 if (nyawa == 2) {
@@ -53,7 +56,7 @@ const loadPage = async () => {
                 }
         
                 if (result == 'WIN!') {
-                    // alert(`You : ${player}<br>Computer : ${comp}<br><br>Congratulations You ${result}`);
+
                     await Swal.fire(
                         `Congratulations You ${result}`,
                         `You : ${player}<br>Computer : ${comp}`,
@@ -61,25 +64,25 @@ const loadPage = async () => {
                       );
                     i = 0;
                 } else if (result == 'LOSE!') {
-                    // alert(`You : ${player}<br>Computer : ${comp}<br><br>Oh No, You ${result}<br><br>${nyawa}`);
+
                     await Swal.fire(
                         `Oh No, You ${result}<br>${nyawa}`,
                         `You : ${player}<br>Computer : ${comp}`,
                         'error'
                       );
                 } else if (result == 'DRAW!') {
-                    // alert(`You : ${player}<br>Computer : ${comp}<br><br>Huuuhhh, You ${result}<br><br>${nyawa}`);
+
                     await Swal.fire(
                         `HHhuuuffhh, You ${result}<br>${nyawa}`,
                         `You : ${player}<br>Computer : ${comp}`,
                         'error'
                       );
                 } else if (player == null) {
-                    // alert(`Canceled, Your Games was ended`);
+
                     await Swal.fire('Canceled, Your Games was ended');
                     i = 0;
                 } else {
-                    // alert(`You : ${player}<br><br>Sorry ${result}<br><br>${nyawa}`);
+
                     await Swal.fire(
                         `Sorry ${result}<br><br>${nyawa}`,
                         ``,
@@ -87,7 +90,7 @@ const loadPage = async () => {
                       );
                 }
             }
-            // again = confirm('Play again ?');
+
             const againConfirm = await Swal.fire({
                 title: 'Play again?',
                 text: "",
@@ -105,7 +108,7 @@ const loadPage = async () => {
               }
         }
         
-        // alert('Computer : Thank You');
+
         await Swal.fire('Computer : Thank You');
     }
 }
