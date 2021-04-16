@@ -2,7 +2,7 @@ const loadPage = async () => {
     let again = true;
 
     const start = await Swal.fire({
-        title: 'Welcome To Gubaku Games<br>By Daniansyah Chusyaidin',
+        title: 'Welcome To Gubaku Games',
         text: 'You have 3 Life',
         icon: 'success'
     });
